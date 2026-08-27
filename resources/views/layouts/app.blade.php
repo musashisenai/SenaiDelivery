@@ -52,26 +52,27 @@
                                 Sair</button>
                         </form>
                     </div>
-
-                    <div class="col-12 col-md-9 col-lg-10 p-0">
-                        <nav class="navbar bg-white border-bottom px-3 px-md-4">
-                            <div class="container-fluid p-0">
-                                <span class="navbar-brand mb-0 h1">Título</span>
-
-                                <div class="d-flex align-items-center gap-2 text-secondary">
-                                    <i class="bi bi-person-circle"></i>
-                                    <span{{ auth()->user()->nome }}></span>
-                                        <span class="badge text-bg-light">Administrador</span>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-
-                    <main class="p-3 p-md-4">
-                        {{ $slot }}
-                    </main>
                 </div>
+
+
+                <div class="col-12 col-md-9 col-lg-10 p-0">
+                    <nav class="navbar bg-white border-bottom px-3 px-md-4">
+                        <div class="container-fluid p-0">
+                            <span class="navbar-brand mb-0 h1">Título</span>
+
+                            <div class="d-flex align-items-center gap-2 text-secondary">
+                                <i class="bi bi-person-circle"></i>
+                                <span{{ auth()->user()->nome }}></span>
+                                    <span class="badge text-bg-light">Administrador</span>
+                            </div>
+                        </div>
+                    </nav>
+
+                <main class="p-3 p-md-4">
+                    {{ $slot }}
+                </main>
             </div>
+        </div>
         </div>
     @else
         {{ $slot }}
