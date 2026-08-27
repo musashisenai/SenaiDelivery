@@ -93,7 +93,7 @@ class ProdutoSeeder extends Seeder
             foreach ($itens as $produto) {
                 Produto::create(
                     [
-                        'categotia_id' => $categoria->id,
+                        'categoria_id' => $categoria->id,
                         'nome' => $produto['nome'],
                         'descricao' => $produto['descricao'],
                         'preco' => $produto['preco'],
