@@ -59,11 +59,7 @@
         </div>
 
         <div class="card-body">
-            @if($ultimosProdutos->isEmpty())
-            <p class="text-secondary mb-0">
-                Nenhum produto cadastrado
-            </p>
-            @else
+            
 
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
@@ -82,6 +78,18 @@
                             <tr>
                                 <td>{{ $produto->nome}}</td>
                                 <td>{{ $produto->categoria->nome}}</td>
+                                <td>{{ $produto->preco}}</td>
+                                <td>
+                                    <span class="badge {{ $produto->ativo ? 'text-bg-success' : 'text-bg-secondary' }}">
+                                        {{ $produto->ativo ? 'Ativo' : 'Inativo'}}
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge {{ $produto->destaque ? 'text-bg-danger' : 'text-bg-light'}}">
+                                        {{ $produto->destaque ? 'Sim' : 'Não'}}
+                                    </span>
+                                </td>
+                                <td>{{ $produto->created_at->format('d/m/Y H:i')}}</td>
                             </tr>
                         @endforeach
                     </tbody>
